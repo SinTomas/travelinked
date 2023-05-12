@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+
+}
+
+.bg-video{
+    width:100%;
+}
+
+.navbar {
+    background-color: rgb(255, 245, 201);
+}
+
+.nav-logo{
+    width: 10vw;
+    margin: 5px 40% 5px 5%;
+}
+
+.form-control{
+    width:15vw;
+}
+
+.btn-outline-success{
+    margin-right: 5vw;
+}
+
+.nav-au{
+    margin-right: 5vw;
+}

@@ -1,4 +1,4 @@
-# Travelinked
+# Project Name
 
 <br>
 
@@ -48,7 +48,7 @@ Tracker for voyages/countries visited with a slot for fun facts, cities, rating 
 | `POST`     | `/edit-countries`                  | Sends info to the server and edits an existing visited country in the DB. |                                             |
 
 
-
+delete
 
 
 
@@ -72,7 +72,7 @@ Country model
 {
   name: String,
   rating: Number,
-  cities: String,
+  cities: Array,
   funFacts: String,
   description: String,
 }
@@ -82,6 +82,8 @@ Country model
 <br>
 
 ## API's
+
+https://restcountries.com/
 
 https://documenter.getpostman.com/view/1134062/T1LJjU52#89ad7ab2-e3e1-4d8a-b99d-44e1c149e788
 
