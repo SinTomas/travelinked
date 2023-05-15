@@ -173,3 +173,20 @@ video {
 .card-name {
     font-size: 2rem;
 }
+
+.about-info{
+    margin-top: 5vh;
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.about-info > h2 {
+    margin-bottom: 5vh;
+}
+
+.about-display {
+    width: 30%;
+    margin-left:2%;
+    margin-right: 2%;
+}
