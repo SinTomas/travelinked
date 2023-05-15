@@ -1,0 +1,10 @@
+{{#each countries}}
+  <img src="{{this.flags.png}}" alt="" />
+  <p>{{this.name.common}}</p>
+  {{#each currencies}}
+  Currency Code: {{@key}}
+  Currency Name: {{this.name}}
+  Currency Symbol: {{this.symbol}}
+{{/each}}
+
+{{/each}}

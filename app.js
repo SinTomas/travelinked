@@ -1,16 +1,6 @@
-// ℹ️ Gets access to environment variables/settings
-// https://www.npmjs.com/package/dotenv
 require("dotenv").config();
-
-// ℹ️ Connects to the database
 require("./db");
-
-// Handles http requests (express is node js framework)
-// https://www.npmjs.com/package/express
 let express = require("express");
-
-// Handles the handlebars
-// https://www.npmjs.com/package/hbs
 let hbs = require("hbs");
 
 let app = express();
@@ -29,6 +19,9 @@ app.use("/", indexRoutes);
 
 let authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
+
+let countriesRoutes = require("./routes/countries.routes");
+app.use("/", countriesRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
