@@ -4,21 +4,24 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: false,
-      unique: true,
       trim: true,
+      required: [true, 'Username is required.'],
+      unique: true
     },
     email: {
       type: String,
-      required: true,
+      required: [true, 'Email is required.'],
       unique: true,
-      trim: true,
       lowercase: true,
+      trim: true
     },
-    password: {
+    password: {  // no slide da aula estava passwordHash
       type: String,
-      required: true,
-    },
+      required: [true, 'Password is required.']
+    }
+  },
+  {
+    timestamps: true
   },
 );
 
