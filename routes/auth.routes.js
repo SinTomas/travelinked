@@ -9,7 +9,7 @@ let mongoose = require("mongoose");
 let saltRounds = 10;
 
 // Require the User model in order to interact with the database
-let User = require("./models/User.model.js");
+let User = require("../models/Users.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 let isLoggedOut = require("../middleware/isLoggedOut");

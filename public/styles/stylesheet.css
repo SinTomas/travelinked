@@ -4,11 +4,12 @@
 }
 
 body{
-
+    z-index: 1;
 }
 
 .bg-video{
     width:100%;
+    z-index: -1;
 }
 
 .navbar {
