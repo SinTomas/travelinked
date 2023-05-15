@@ -7,6 +7,7 @@
 }
 
 body{
+    background-color: rgb(255, 246, 234);
     z-index: 1;
 }
 
@@ -120,7 +121,7 @@ video {
 
   .enter-options > a{
     color:white;
-    font-size: 28px;
+    font-size: 24px;
     background-color: rgb(20,141,0);
     border-radius: 5px;
     padding: 5px 10px 10px 10px;  
@@ -134,3 +135,42 @@ video {
     color: rgb(20,141,0);
     border:solid rgb(20,141,0) 2px;
   }
+
+.info-cards{
+    width: 70%;
+    margin-left: 15%;
+    padding-top:10vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vw;
+}
+
+.card-text{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.countries-header{
+    text-align: center;
+    margin-top: 5vh;
+    color:black;
+}
+.flag-border{
+    border: solid black 1px;
+}
+.display-cards{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.card {
+    text-align: center;
+    padding: 1vh 1vw;
+    background-color: rgba(255,255,255,0.5);
+    border: solid rgb(20,141,0) 1px;
+}
+
+.card-name {
+    font-size: 2rem;
+}
