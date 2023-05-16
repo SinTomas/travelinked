@@ -12,9 +12,6 @@ router.get("/countries", async (req, res) => {
     const country = new Country({
       flag: countryInfo.flags.png,
       name: countryInfo.name.common,
-      continent: countryInfo.continents[0],
-      population: countryInfo.population,
-      capital: countryInfo.capital,
     });
 
     // Save the country instance to the database
