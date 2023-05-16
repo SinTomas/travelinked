@@ -31,10 +31,10 @@ router.get("/edit-profile", isLoggedIn, async (req, res) => {
     router.post("/edit-profile", isLoggedIn, async (req, res) => {
       let user = req.session.currentUser._id;
 
-      let { username, password, nationality, visitedCountries } = req.body;
+      let { firstName, lastName, age, password, nationality} = req.body;
       try {
-        let pickedUser = await User.findByIdAndUpdate(user, { username, password, nationality, visitedCountries });
-        res.redirect("/edit-profile");} 
+        let pickedUser = await User.findByIdAndUpdate(user, { firstName, lastName, age, password, nationality});
+        res.redirect("/profile");} 
       
       catch (error) {console.log(error);}
     });
