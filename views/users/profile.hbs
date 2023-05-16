@@ -1,6 +1,15 @@
-
-
-<h2>Welcome {{foundUser.username}}!</h2>
-<a class="profile-btns">Go to your visited countries!</a>
-<a class="profile-btns">Add visited countries!</a>
-<a class="profile-btns">Edit Profile</a>
+<h2 class="profile-title">Welcome {{foundUser.username}}!</h2>
+<section>
+    <div class="profile-info">
+        <img class="profile-picture" src="../../images/fotoTomas.jpeg">
+        <p class="user-info">FirstName LastName{{foundUser.firstName}} {{foundUser.lastName}}</p>
+        <p class="user-info">From: {{foundUser.nationality}}</p>
+        <p class="user-info">Age: {{foundUser.age}}</p>
+        <a class="profile-btns" href="/add-visited">Add visited countries</a>
+        <p></p>
+        <a class="profile-btns" href="/edit-profile">Edit Profile</a>
+    </div>
+    <div>
+        
+    </div>
+</section>

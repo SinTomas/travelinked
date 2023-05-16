@@ -5,7 +5,6 @@ let isLoggedIn = require('../middleware/isLoggedIn');
 //Get User from data base by ID Route
 router.get("/profile", isLoggedIn, async (req, res) => {
 
-
 let user = req.session.currentUser._id;
 
   try {
