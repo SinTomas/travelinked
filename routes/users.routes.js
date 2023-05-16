@@ -10,7 +10,7 @@ let user = req.session.currentUser._id;
 
   try {
     let foundUser = await User.findById(user);
-    res.render("profile.hbs", {foundUser});
+    res.render("users/profile", {foundUser});
   } catch (error) {
     console.log(error);
   }
