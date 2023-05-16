@@ -20,7 +20,7 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'Password is required.']
     },
-    visitedCountires:[ {
+    visitedCountries:[ {
       type: Schema.Types.ObjectId,
       ref:"Country",
     }

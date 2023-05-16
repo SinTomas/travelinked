@@ -2,19 +2,22 @@ let router = require("express").Router();
 let Country = require("../models/Countries.model");
 let axios = require("axios");
 
+
+
+
 //Get all Countries in the world
 
 router.get("/countries", async (req, res) => {
   const apiCall = await axios.get("https://restcountries.com/v3.1/all");
   const countryData = apiCall.data;
 
+  // Save the country instance to the database
   for (const countryInfo of countryData) {
     const country = new Country({
       flag: countryInfo.flags.png,
       name: countryInfo.name.common,
     });
 
-    // Save the country instance to the database
     await country.save();
   }
 
@@ -89,15 +92,10 @@ router.get("/oceania", async (req, res) => {
   res.render("countries/oceania", { oceania });
 });
 
-
-
-
+// Ainda não está a ser usado
 router.get("/countries/create", async (req, res) => {
   res.render("countries/add-country");
 });
 
-router.get("/about", async (req, res) => {
-  res.render("about");
-});
 
 module.exports = router;
