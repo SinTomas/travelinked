@@ -269,3 +269,57 @@ video {
     flex-direction: column;
     align-items: center;
 }
+
+.profile-btns{
+    text-decoration: none;
+    color:white;
+    font-size: 1.1rem;
+    background-color: rgb(20,141,0);
+    border-radius: 5px;
+    padding: 0.5vh 0.5vw;  
+    text-decoration: none;
+    border:solid white 2px;
+    transition-duration: 0.5s;
+    width:8vw;
+    text-align: center;
+}
+
+.profile-btns:hover{
+    background-color: white;
+    color: rgb(20,141,0);
+    border:solid rgb(20,141,0) 2px;
+}
+
+.profile-title{
+    font-size: 3.5rem;
+    margin-top: 5vh;
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+.profile-info{
+    padding: 1vh 1vw;
+    display: flex;
+    width:15%;
+    margin-left: 10%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.profile-picture{
+    height: 22vh;
+    width: 10vw;
+    border-radius: 5px;
+    margin-bottom: 3vh;
+}
+
+.user-info{
+    font-size: 1.1rem;
+}
+
+.visited-display{
+    width:65%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+}

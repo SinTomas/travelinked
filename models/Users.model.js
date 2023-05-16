@@ -9,6 +9,12 @@ const userSchema = new Schema(
       required: [true, 'Username is required.'],
       unique: true
     },
+    firstName: {
+      type: String,
+    },
+    lastName: {
+      type: String,
+    },
     email: {
       type: String,
       required: [true, 'Email is required.'],
@@ -22,6 +28,9 @@ const userSchema = new Schema(
     },
     nationality: {
       type: String,
+    },
+    age: {
+      type: Number,
     },
     visitedCountries:[ {
       type: Schema.Types.ObjectId,
