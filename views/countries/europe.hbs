@@ -1,14 +1,9 @@
-<h1 class="countries-header">List of all countries<br />In Europe!</h1>
+<h1 class="page-hd">List of all countries<br />In Europe!</h1>
 <section class="info-cards">
   {{#each europe}}
-    
       <div class="display-cards">
         <div class="card" style="width: 18rem;">
-          <img
-            src="{{this.flags.png}}"
-            class="card-img-top flag-border"
-            alt="Image of flag couldn't be loaded"
-          />
+          <img src="{{this.flags.png}}" class="card-img-top flag-border" alt="Image of flag couldn't be loaded"/>
           <div class="card-body">
             <p class="card-text card-name">{{this.name.common}}</p>
             <p class="card-text">{{this.continents}}</p>
@@ -22,6 +17,5 @@
           </div>
         </div>
       </div>
-   
   {{/each}}
 </section>
