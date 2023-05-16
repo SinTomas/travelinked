@@ -34,8 +34,7 @@ router.get("/europe", async (req, res) => {
   for (let i = 0; i < allCountries.length; i++) {
     if (allCountries[i].continents[0] === "Europe") {europe.push(allCountries[i]);}
   }
-  console.log(europe);
-
+  
   res.render("countries/europe", { europe });
 });
 
