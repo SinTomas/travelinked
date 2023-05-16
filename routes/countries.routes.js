@@ -1,21 +1,27 @@
 let router = require("express").Router();
-let country = require("../models/Countries.model");
+let Country = require("../models/Countries.model");
 let axios = require("axios");
 
 //Get all Countries in the world
 
 router.get("/countries", async (req, res) => {
   const apiCall = await axios.get("https://restcountries.com/v3.1/all");
-  await Country.create({
-    flag: flags.png,
-    name: name.common,
-    continent: continents,
-    population,
-    capital,
-    currency: currencies[0].name,
-    currencySymbol: currencies[0].symbol,
-  });
-  res.render("countries/all-countries", { countries: apiCall.data });
+  const countryData = apiCall.data;
+
+  for (const countryInfo of countryData) {
+    const country = new Country({
+      flag: countryInfo.flags.png,
+      name: countryInfo.name.common,
+      continent: countryInfo.continents[0],
+      population: countryInfo.population,
+      capital: countryInfo.capital,
+    });
+
+    // Save the country instance to the database
+    await country.save();
+  }
+
+  res.render("countries/all-countries", { countries: countryData });
 });
 
 //Get all Countries in Europe
@@ -42,11 +48,5 @@ router.get("/countries/create", async (req, res) => {
 router.get("/about", async (req, res) => {
   res.render("about");
 });
-
-router.get("/europe", async (req, res) => {
-  let apiCall = await axios.get("https://restcountries.com/v3.1/all");
-console.log(apiCall.data)
-  res.render("countries/europe", {countries: apiCall.data});
-})
 
 module.exports = router;
