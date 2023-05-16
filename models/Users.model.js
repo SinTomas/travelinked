@@ -23,7 +23,7 @@ const userSchema = new Schema(
     nationality: {
       type: String,
     },
-    visitedCountires:[ {
+    visitedCountries:[ {
       type: Schema.Types.ObjectId,
       ref:"Country",
     }]
