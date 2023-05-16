@@ -1,9 +1,9 @@
-<h2>Add a Country</h2>
+<h2 class="page-hd">Add a Visited Country</h2>
 
-<form action="/countries/create" method="post">
+<form action="/create" method="post">
 <div>
   <label for="name">Name:</label>
-  <input type="text" name="name" id="name">
+  <select></select>
 </div>
 
 <div>
@@ -16,17 +16,15 @@
   <input type="array" name="cities" id="cities">
 </div>
 
-
 <div>
   <label for="funFacts">Fun Facts:</label>
-  <input type="text" name="funFacts" id="funFacts">
+  <input type="textarea" name="funFacts" id="funFacts">
 </div>
 
 <div>
   <label for="description">Description:</label>
-  <input type="text" name="description" id="description">
+  <input type="textarea" name="description" id="description">
 </div>
 
-
-  <button type="submit" class="btn">Create Country</button>
+  <button type="submit" class="btn">Add visited country</button>
 </form>
