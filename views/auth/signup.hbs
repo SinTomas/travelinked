@@ -1,24 +1,30 @@
-<div id="form">
-  <h2>Sign Up</h2>
-  <form action="/auth/signup" method="POST">
-
-    <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
-
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
-
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
-
-    <button type="submit">Sign Up</button>
-
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+<div class="video-wrapper">
+      <video autoplay muted loop class="bg-video">
+        <source src="/images/globeweb.webm" type="video/webm"></src>
+      </video>
 </div>
+<section class="signup">
+  <div id="form">
+    <form class ="signup-form" action="/auth/signup" method="POST">
+      
+      <label class="login-signup-text"> Email:
+        <input type="email" name="email" placeholder="Your email" />
+      </label>
+
+      <label class="login-signup-text"> Username:
+        <input type="text" name="username" placeholder="Your username" />
+      </label>
+
+      <label class="login-signup-text"> Password:
+        <input type="password" name="password" placeholder="Your password" />
+      </label>
+
+      <button class="login-signup-btns" type="submit">Sign Up</button>
+
+
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+  </div>
+</section>

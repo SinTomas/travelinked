@@ -212,3 +212,60 @@ video {
     text-align: justify;
     margin-top: 2vh;
 }
+
+.login{
+    color:white;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.5);
+    width:24vw;
+    height: 28vh;
+    border-radius: 5px;
+    margin-top: 13%;
+    margin-left: 38%;
+  }
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-signup-btns{
+    color:white;
+    font-size: 1.8rem;
+    background-color: rgb(20,141,0);
+    border-radius: 5px;
+    padding: 0.5vh 0.5vw;  
+    text-decoration: none;
+    border:solid white 2px;
+    transition-duration: 0.5s;
+    margin-top: 3vh;
+}
+
+.login-signup-btns:hover{
+    background-color: white;
+    color: rgb(20,141,0);
+    border:solid rgb(20,141,0) 2px;
+}
+
+.login-signup-text{
+    font-size: 1.5rem;
+    margin-top: 3vh;
+}
+
+.signup{
+    color:white;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.5);
+    width:24vw;
+    height: 34vh;
+    border-radius: 5px;
+    margin-top: 13%;
+    margin-left: 38%;
+  }
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
