@@ -18,7 +18,7 @@ let indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
 let authRoutes = require("./routes/auth.routes");
-app.use("/auth", authRoutes);
+app.use("/", authRoutes);
 
 let countriesRoutes = require("./routes/countries.routes");
 app.use("/", countriesRoutes);

@@ -8,7 +8,12 @@ let axios = require("axios");
 //Get all Countries in the world
 
 router.get("/countries", async (req, res) => {
-  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+
+
+try {
+  const createdCountries = await Country.find();
+  if (!createdCountries.length) {
+    const apiCall = await axios.get("https://restcountries.com/v3.1/all");
   const countryData = apiCall.data;
 
   // Save the country instance to the database
@@ -19,9 +24,17 @@ router.get("/countries", async (req, res) => {
     });
 
     await country.save();
+    res.render("countries/all-countries", { countries: countryData });
   }
-
+} else {
+  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  const countryData = apiCall.data;
   res.render("countries/all-countries", { countries: countryData });
+}
+
+} catch (error) {
+  console.log(error)
+}
 });
 
 //Get all Countries in Europe

@@ -1,18 +1,16 @@
 let router = require("express").Router();
 let User = require("../models/Users.model");
+let isLoggedIn = require('../middleware/isLoggedIn');
 
 //get the User
-router.get("/user/userId", async (req, res) => {
+router.get("/profile", isLoggedIn, async (req, res) => {
 
-let {userId} = req.params;
 
-console.log(userId);
-/* let{username,nationality,visitedCountires} = req.body */
-
+let user = req.session.currentUser._id;
 
   try {
-    let findUser = await User.findById(userId);
-    res.render("users/profiles.hbs", {useranme});
+    let foundUser = await User.findById(user);
+    res.render("profile.hbs", {foundUser});
   } catch (error) {
     console.log(error);
   }
