@@ -16,6 +16,12 @@ let user = req.session.currentUser._id;
   }
 });
 
+
+
+
+
+
+//About Route
 router.get("/about", async (req, res) => {
   res.render("about");
 });
