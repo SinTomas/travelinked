@@ -149,7 +149,7 @@ video {
     font-size: 1rem;
 }
 
-.countries-header{
+.page-hd{
     text-align: center;
     margin-top: 5vh;
     color:black;
@@ -172,4 +172,25 @@ video {
 
 .card-name {
     font-size: 2rem;
+}
+
+.about-info{
+    margin-top: 5vh;
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+}
+
+.about-info > h2 {
+    margin-bottom: 5vh;
+}
+
+.about-display {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+.image-about{
+    height: 35vh;
 }

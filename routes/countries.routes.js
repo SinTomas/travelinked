@@ -1,6 +1,6 @@
 let router = require("express").Router();
-let Country = require("../models/country.Model");
-const axios = require("axios");
+let country = require("../models/Countries.model");
+let axios = require("axios");
 
 //Get all Countries in the world
 
@@ -38,5 +38,15 @@ router.get("/countries/europe", async (req, res) => {
 router.get("/countries/create", async (req, res) => {
   res.render("countries/add-country");
 });
+
+router.get("/about", async (req, res) => {
+  res.render("about");
+});
+
+router.get("/europe", async (req, res) => {
+  let apiCall = await axios.get("https://restcountries.com/v3.1/all");
+console.log(apiCall.data)
+  res.render("countries/europe", {countries: apiCall.data});
+})
 
 module.exports = router;
