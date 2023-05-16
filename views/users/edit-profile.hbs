@@ -1,0 +1,19 @@
+<h2>{{foundUser.username}}'s Profile</h2>
+
+
+<form action="/edit-profile" method="post">
+<div class="form-div">
+  <label for="name">Username:</label>
+  <input type="text" name="username" id="username" value="{{username}}">
+</div>
+
+
+
+  <button type="submit" class="btn">Edit {{name}}</button>
+</form>
+
+
+
+{{!-- <a class="profile-btns">Edit Username</a>
+<a class="profile-btns">Edit password</a> --}}
+
