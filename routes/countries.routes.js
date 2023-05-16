@@ -1,5 +1,5 @@
 let router = require("express").Router();
-let Country = require("../models/country.Model");
+let country = require("../models/Countries.model");
 let axios = require("axios");
 
 //Get all Countries

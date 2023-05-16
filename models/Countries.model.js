@@ -1,11 +1,13 @@
 let {Schema, model} = require('mongoose');
 
 let countrySchema = new Schema ({
+    flag: String,
     name: String,
-    rating: Number,
-    cities: Array,
-    funFacts: String,
-    description: String,
+    continent: String,
+    population: Number,
+    capital: String,
+    currency: String,
+    currencySymbol: String
 })
 
 module.exports = model('Country', countrySchema);

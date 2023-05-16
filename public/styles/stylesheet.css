@@ -149,7 +149,7 @@ video {
     font-size: 1rem;
 }
 
-.countries-header{
+.page-hd{
     text-align: center;
     margin-top: 5vh;
     color:black;
@@ -179,6 +179,7 @@ video {
     text-align: center;
     width: 90%;
     margin-left: 5%;
+    display: flex;
 }
 
 .about-info > h2 {
@@ -187,6 +188,9 @@ video {
 
 .about-display {
     width: 30%;
-    margin-left:2%;
-    margin-right: 2%;
+    display: flex;
+    justify-content: center;
+}
+.image-about{
+    height: 35vh;
 }

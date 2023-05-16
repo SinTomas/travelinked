@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const countryModel = require("./Countries.model");
 
 const userSchema = new Schema(
   {
@@ -18,7 +19,12 @@ const userSchema = new Schema(
     password: {  // no slide da aula estava passwordHash
       type: String,
       required: [true, 'Password is required.']
+    },
+    visitedCountires:[ {
+      type: Schema.Types.ObjectId,
+      ref:"Country",
     }
+  ]
   },
   {
     timestamps: true
