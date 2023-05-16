@@ -23,6 +23,9 @@ app.use("/auth", authRoutes);
 let countriesRoutes = require("./routes/countries.routes");
 app.use("/", countriesRoutes);
 
+let usersRoutes = require("./routes/users.routes");
+app.use("/", usersRoutes);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

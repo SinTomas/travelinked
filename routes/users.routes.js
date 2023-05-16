@@ -8,11 +8,15 @@ let {userId} = req.params;
 let{username,nationality,visitedCountires} = req.body
 
   try {
-    let findUser = await User.findById( userId);
+    let findUser = await User.findById(userId);
     res.render("users/profile.hbs", {useranme});
   } catch (error) {
     console.log(error);
   }
+});
+
+router.get("/about", async (req, res) => {
+  res.render("about");
 });
 
 module.exports=router;
