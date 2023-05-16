@@ -5,11 +5,14 @@ let User = require("../models/Users.model");
 router.get("/user/userId", async (req, res) => {
 
 let {userId} = req.params;
-let{username,nationality,visitedCountires} = req.body
+
+console.log(userId);
+/* let{username,nationality,visitedCountires} = req.body */
+
 
   try {
     let findUser = await User.findById(userId);
-    res.render("users/profile.hbs", {useranme});
+    res.render("users/profiles.hbs", {useranme});
   } catch (error) {
     console.log(error);
   }
