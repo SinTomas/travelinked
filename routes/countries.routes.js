@@ -25,21 +25,75 @@ router.get("/countries", async (req, res) => {
 });
 
 //Get all Countries in Europe
-router.get("/countries/europe", async (req, res) => {
+router.get("/europe", async (req, res) => {
   const apiCall = await axios.get("https://restcountries.com/v3.1/all");
   let allCountries = apiCall.data;
-  /* console.log(allCountries[3].continents[0]); */
+
   let europe = [];
 
   for (let i = 0; i < allCountries.length; i++) {
-    if (allCountries[i].continents[0] === "Europe") {
-      europe.push(allCountries[i]);
-    }
+    if (allCountries[i].continents[0] === "Europe") {europe.push(allCountries[i]);}
   }
   console.log(europe);
 
   res.render("countries/europe", { europe });
 });
+
+//Get all Countries in Asia
+router.get("/asia", async (req, res) => {
+  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let allCountries = apiCall.data;
+  let asia = [];
+
+  for (let i = 0; i < allCountries.length; i++) {
+    if (allCountries[i].continents[0] === "Asia") {asia.push(allCountries[i]);}
+  }
+
+  res.render("countries/asia", { asia });
+});
+
+//Get all Countries in America
+router.get("/america", async (req, res) => {
+  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let allCountries = apiCall.data;
+  let america = [];
+
+  for (let i = 0; i < allCountries.length; i++) {
+    if (allCountries[i].continents[0] === "North America"||allCountries[i].continents[0] === "South America") {
+      america.push(allCountries[i]);}
+  }
+
+  res.render("countries/america", { america });
+});
+
+//Get all Countries in Africa
+router.get("/africa", async (req, res) => {
+  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let allCountries = apiCall.data;
+
+  let africa = [];
+
+  for (let i = 0; i < allCountries.length; i++) {
+    if (allCountries[i].continents[0] === "Africa") {africa.push(allCountries[i]);}
+  }
+  res.render("countries/africa", { africa });
+});
+
+//Get all Countries in Oceania
+router.get("/oceania", async (req, res) => {
+  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let allCountries = apiCall.data;
+
+  let oceania = [];
+
+  for (let i = 0; i < allCountries.length; i++) {
+    if (allCountries[i].continents[0] === "Oceania") {oceania.push(allCountries[i]);}
+  }
+  res.render("countries/oceania", { oceania });
+});
+
+
+
 
 router.get("/countries/create", async (req, res) => {
   res.render("countries/add-country");
