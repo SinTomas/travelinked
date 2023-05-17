@@ -66,10 +66,11 @@ router.get("/add-visited", isLoggedIn, async (req, res) => {
 router.post("/add-visited", isLoggedIn, async (req, res) => {
 let user = req.session.currentUser._id;
 
-let { visitedCountries} = req.body;
+let { visitedCountries, experiences } = req.body;
 
 try {
   await User.findByIdAndUpdate(user, {$push: {visitedCountries: visitedCountries}});
+  await Country.findByIdAndUpdate(visitedCountries, {experiences})
   res.redirect("/profile");} 
 
 catch (error) {console.log(error);}
@@ -89,5 +90,31 @@ catch (error) {console.log(error);
   }
 });
 
+
+
+
+//Edit Visited Countries Route
+router.get("/edit-visited/:id", isLoggedIn, async (req, res) => {
+  let {id} = req.params
+  
+    try {
+      let country = await Country.findById(id);
+      res.render("users/edit-visited", {country, id});
+      //res.send({foundUser, countries, id})
+    }
+    catch (error) {console.log(error);
+    }
+});
+  
+router.post("/edit-visited/:id", isLoggedIn, async (req, res) => {
+  let {id} = req.params
+  let { rating, experiences, cities} = req.body;
+  
+  try {
+    await Country.findByIdAndUpdate(id, { rating, experiences, cities });
+    res.redirect("/profile");}
+  
+  catch (error) {console.log(error);}
+  });
 
 module.exports=router;

@@ -2,7 +2,7 @@
 
     
 
-<section>
+<section class="profile-layout">
     <div class="profile-info">
         <img class="profile-picture" src="{{foundUser.picture}}">
         <p class="user-info">{{foundUser.firstName}} {{foundUser.lastName}}</p>
@@ -13,29 +13,31 @@
         <a class="profile-btns" href="/edit-profile">Edit Profile</a>
     </div>
     
-
+    <div class="visited-wrapper">
         <div class="visited-display">
-        <section class="info-cards">
-            {{#each foundUser.visitedCountries}}
-                <div class="display-cards">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{this.flag.png}}" class="card-img-top flag-border" alt="Image of flag couldn't be loaded">
-                        <div class="card-body">
-                            <p class="card-text card-name">{{this.name}}</p>
-                            <p class="card-text card-name">{{this.rating}}</p>
-                            <p class="card-text card-name">{{this.cities}}</p>
+            <section class="info-cards">
+                {{#each foundUser.visitedCountries}}
+                    <div class="display-cards">
+                        <div class="card" style="width: 14vw;">
+                            <img src="{{this.flag}}" class="card-img-top flag-border" alt="Image of flag couldn't be loaded">
+                            <div class="card-body">
+                                <p class="card-text card-name">{{this.name}}</p>
+                                <p class="card-text card-name">{{this.rating}}</p>
+                                <p class="card-text card-name">{{this.cities}}</p>
+                            </div>
+                            <a class="profile-btns" href="/edit-visited/{{_id}}">Edit</a>
+                            <form action="/remove-visited/{{_id}}" method="post">
+                                <button type="submit">Delete</button>
+                            </form>
                         </div>
-                        <button type="submit">Edit</button>
-                        <a>Delete</a>
                     </div>
-                </div>
-            {{/each}}
-        </section>
+                {{/each}}
+            </section>
+        </div>
     </div>
 </section>
 
         <div>
             <p>{{name}}</p>
         </div>
-        <form action="/remove-visited/{{_id}}" method="post">
-        <button type="submit">Delete</button></form>
+        

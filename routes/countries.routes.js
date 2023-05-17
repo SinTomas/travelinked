@@ -11,24 +11,24 @@ router.get("/countries", async (req, res) => {
 
 
 try {
-  const createdCountries = await Country.find();
+  let createdCountries = await Country.find();
   if (!createdCountries.length) {
-    const apiCall = await axios.get("https://restcountries.com/v3.1/all");
-  const countryData = apiCall.data;
-
+  let apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let countryData = apiCall.data;
+  console.log(apiCall.data.length)
   // Save the country instance to the database
-  for (const countryInfo of countryData) {
-    const country = new Country({
+  for (let countryInfo of countryData) {
+    let country = new Country({
       flag: countryInfo.flags.png,
       name: countryInfo.name.common,
     });
 
     await country.save();
-    res.render("countries/all-countries", { countries: countryData });
   }
+  res.render("countries/all-countries", { countries: countryData });
 } else {
-  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
-  const countryData = apiCall.data;
+  let apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let countryData = apiCall.data;
   res.render("countries/all-countries", { countries: countryData });
 }
 
@@ -39,7 +39,7 @@ try {
 
 //Get all Countries in Europe
 router.get("/europe", async (req, res) => {
-  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let apiCall = await axios.get("https://restcountries.com/v3.1/all");
   let allCountries = apiCall.data;
 
   let europe = [];
@@ -53,7 +53,7 @@ router.get("/europe", async (req, res) => {
 
 //Get all Countries in Asia
 router.get("/asia", async (req, res) => {
-  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let apiCall = await axios.get("https://restcountries.com/v3.1/all");
   let allCountries = apiCall.data;
   let asia = [];
 
@@ -66,7 +66,7 @@ router.get("/asia", async (req, res) => {
 
 //Get all Countries in America
 router.get("/america", async (req, res) => {
-  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let apiCall = await axios.get("https://restcountries.com/v3.1/all");
   let allCountries = apiCall.data;
   let america = [];
 
@@ -80,7 +80,7 @@ router.get("/america", async (req, res) => {
 
 //Get all Countries in Africa
 router.get("/africa", async (req, res) => {
-  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let apiCall = await axios.get("https://restcountries.com/v3.1/all");
   let allCountries = apiCall.data;
 
   let africa = [];
@@ -93,7 +93,7 @@ router.get("/africa", async (req, res) => {
 
 //Get all Countries in Oceania
 router.get("/oceania", async (req, res) => {
-  const apiCall = await axios.get("https://restcountries.com/v3.1/all");
+  let apiCall = await axios.get("https://restcountries.com/v3.1/all");
   let allCountries = apiCall.data;
 
   let oceania = [];
