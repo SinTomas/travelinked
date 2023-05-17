@@ -28,6 +28,7 @@ const userSchema = new Schema(
     },
     nationality: {
       type: String,
+      default: "Portugal",
     },
     age: {
       type: Number,
@@ -35,7 +36,11 @@ const userSchema = new Schema(
     visitedCountries:[ {
       type: Schema.Types.ObjectId,
       ref:"Country",
-    }]
+    }],
+    picture: {
+      type: String,
+      default: "./images/default-pic.png"
+    }
   },
   {
     timestamps: true
