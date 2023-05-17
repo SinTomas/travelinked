@@ -1,0 +1,34 @@
+<h2 class="page-hd">Add a Visited Country</h2>
+
+<form action="/add-visited" method="post">
+<div>
+  <label for="country">Select Country:</label>
+      <select name='visitedCountries' id='country'>
+          {{#each countriesList}}
+            <option name="visitedCountries" value='{{this._id}}'>{{this.name}}</option>
+          {{/each}}
+      </select>
+</div>
+
+<div>
+  <label for="rating">Rating:</label>
+  <input type="number" name="rating" id="rating">
+</div>
+
+<div>
+  <label for="cities">Cities:</label>
+  <input type="array" name="cities" id="cities">
+</div>
+
+<div>
+  <label for="funFacts">Fun Facts:</label>
+  <input type="textarea" name="funFacts" id="funFacts">
+</div>
+
+<div>
+  <label for="description">Experiences:</label>
+  <input type="textarea" name="description" id="description">
+</div>
+
+  <button type="submit" class="btn">Submit</button>
+</form>

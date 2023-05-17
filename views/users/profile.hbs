@@ -19,7 +19,11 @@
         </div>
         <form action="/remove-visited/{{_id}}" method="post">
         <button type="submit">Delete</button></form>
+
+        <form action="/edit-visited/{{_id}}" method="post">
+        <button type="submit">Update Visited</button></form>
         
+
     {{/each}}
 
     <div class="visited-display">
