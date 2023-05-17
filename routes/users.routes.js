@@ -85,7 +85,8 @@ try {
   await User.findByIdAndUpdate(user, {$pull: {visitedCountries: id}});
   res.redirect("/profile");} 
 
-catch (error) {console.log(error);}
+catch (error) {console.log(error);
+  }
 });
 
 

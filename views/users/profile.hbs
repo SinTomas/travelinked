@@ -13,29 +13,17 @@
         <a class="profile-btns" href="/edit-profile">Edit Profile</a>
     </div>
     
-{{#each foundUser.visitedCountries}}
-        <div>
-            <p>{{name}}</p>
-        </div>
-        <form action="/remove-visited/{{_id}}" method="post">
-        <button type="submit">Delete</button></form>
-        
-    {{/each}}
 
-    <div class="visited-display">
+        <div class="visited-display">
         <section class="info-cards">
-            {{#each countries}}
+            {{#each foundUser.visitedCountries}}
                 <div class="display-cards">
                     <div class="card" style="width: 18rem;">
-                        <img src="{{this.flags.png}}" class="card-img-top flag-border" alt="Image of flag couldn't be loaded">
+                        <img src="{{this.flag.png}}" class="card-img-top flag-border" alt="Image of flag couldn't be loaded">
                         <div class="card-body">
-                            <p class="card-text card-name">{{this.name.common}}</p>
-                            <p class="card-text">{{this.continents}}</p>
-                            <p class="card-text">Population: {{this.population}}</p>
-                            <p class="card-text">Capital: {{this.capital}}</p>
-                            {{#each currencies}}
-                            <p class="card-text">Currency Name: {{this.name}} {{this.symbol}}</p>
-                            {{/each}}
+                            <p class="card-text card-name">{{this.name}}</p>
+                            <p class="card-text card-name">{{this.rating}}</p>
+                            <p class="card-text card-name">{{this.cities}}</p>
                         </div>
                         <button type="submit">Edit</button>
                         <a>Delete</a>
@@ -45,3 +33,9 @@
         </section>
     </div>
 </section>
+
+        <div>
+            <p>{{name}}</p>
+        </div>
+        <form action="/remove-visited/{{_id}}" method="post">
+        <button type="submit">Delete</button></form>

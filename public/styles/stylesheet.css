@@ -307,7 +307,7 @@ video {
     justify-content: center;
     flex-direction: column;
     border: solid black 1px;
-    background-color: white;
+    background-color: rgba(20,141,0,0.1);
     align-items: center;
 }
 
@@ -350,8 +350,7 @@ video {
 }
 
 .form-div{
-    background-color: darkslategrey;
-    margin: 5vh 0vw;
+    margin-bottom: 4vh;
 }
 
 .edit-profile{
@@ -362,9 +361,13 @@ video {
 .edit-form{
     display: flex;
     justify-content: center;
-    width:60%;
-    margin-left:20%;
-    background-color: brown;
+    width:40%;
+    margin-left:30%;
     flex-direction: column;
     align-items: center;
+    font-size: 1.2rem;
+    background-color: rgba(20,141,0,0.1);
+    padding-top:4vh;
+    padding-bottom: 4vh;
+    border: solid black 1px;
 }
