@@ -25,9 +25,10 @@
                                 <p class="card-text card-name">{{this.rating}}</p>
                                 <p class="card-text card-name">{{this.cities}}</p>
                             </div>
-                            <a class="profile-btns" href="/edit-visited/{{_id}}">Edit</a>
+                            <a class="visited-btns" href="/edit-visited/{{_id}}">Edit</a>
+                            </br>
                             <form action="/remove-visited/{{_id}}" method="post">
-                                <button type="submit">Delete</button>
+                                <button type="submit" class="visited-btns">Delete</button>
                             </form>
                         </div>
                     </div>
@@ -36,8 +37,3 @@
         </div>
     </div>
 </section>
-
-        <div>
-            <p>{{name}}</p>
-        </div>
-        

@@ -176,6 +176,9 @@ video {
     transition-duration: 1s;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
 
 .card:hover{
@@ -183,7 +186,7 @@ video {
 }
 
 .card-name {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .about-info{
@@ -306,6 +309,7 @@ video {
     padding: 1vh 1vw;
     display: flex;
     width:12%;
+    height: 60vh;
     margin-left: 10%;
     justify-content: center;
     flex-direction: column;
@@ -376,9 +380,28 @@ video {
 
 .visited-wrapper{
     width: 100%;
-    display: flex;
 }
 
 .profile-layout{
     display: flex;
+}
+
+.visited-btns{
+    text-decoration: none;
+    color:white;
+    font-size: 1.1rem;
+    background-color: rgb(20,141,0);
+    border-radius: 5px;
+    padding: 0.5vh 0.5vw;  
+    text-decoration: none;
+    border:solid white 2px;
+    transition-duration: 0.5s;
+    width:4vw;
+    text-align: center;
+}
+
+.visited-btns:hover{
+    background-color: white;
+    color: rgb(20,141,0);
+    border:solid rgb(20,141,0) 2px;
 }
