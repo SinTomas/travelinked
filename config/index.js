@@ -22,8 +22,7 @@ let session = require("express-session");
 let MongoStore = require("connect-mongo");
 
 // Connects the mongo uri to maintain the same naming structure
-let MONGO_URI =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/travelinked";
+let MONGO_URI = `mongodb+srv://SinTomas:${process.env.MONGODB_PASSWORD}@travelink.l3ltdjs.mongodb.net/?retryWrites=true&w=majority`;
 
 // Middleware configuration
 module.exports = (app) => {
