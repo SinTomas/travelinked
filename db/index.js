@@ -5,8 +5,7 @@ let mongoose = require("mongoose");
 // ℹ️ Sets the MongoDB URI for our app to have access to it.
 // If no env has been set, we dynamically set it to whatever the folder name was upon the creation of the app
 
-let MONGO_URI = `mongodb+srv://SinTomas:${process.env.MONGODB_PASSWORD}@travelink.l3ltdjs.mongodb.net/?retryWrites=true&w=majority`;
-mongoose.set('strictQuery', false);
+let MONGO_URI = process.env.MONGODB_URI;
 mongoose
   .connect(MONGO_URI)
   .then((x) => {
