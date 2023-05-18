@@ -23,7 +23,7 @@ let MongoStore = require("connect-mongo");
 
 // Connects the mongo uri to maintain the same naming structure
 let MONGO_URI =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/travelinked";
+  process.env.MONGODB_URI;
 
 // Middleware configuration
 module.exports = (app) => {
